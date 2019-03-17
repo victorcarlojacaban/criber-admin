@@ -107,6 +107,13 @@ class ModulesTableSeeder extends Seeder
                 'created_by'            => 1,
                 'created_at'            => Carbon::now(),
             ],
+            [
+                'name'                  => trans('menus.backend.locations.management'),
+                'url'                   => 'admin.locations.index',
+                'view_permission_id'    => 'view-location-permission',
+                'created_by'            => 1,
+                'created_at'            => Carbon::now(),
+            ],
         ];
 
         DB::table('modules')->insert($modules);

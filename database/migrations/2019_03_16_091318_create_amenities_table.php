@@ -15,14 +15,9 @@ class CreateAmenitiesTable extends Migration
     {
         Schema::create('amenities', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('location_id');
             $table->string('name');
             $table->string('icon_name');
             $table->timestamps();
-        });
-
-        Schema::table('amenities', function ($table) {
-            $table->foreign('location_id')->references('id')->on('locations');
         });
     }
 

@@ -24,6 +24,13 @@ class DatabaseSeeder extends Seeder
         $this->call(MenuTableSeeder::class);
         $this->call(ModulesTableSeeder::class);
 
+        $this->call(LocationsTableSeeder::class);
+        $this->call(FeaturesTableSeeder::class);
+        $this->call(AmenitiesTableSeeder::class);
+        $this->call(RoomsTableSeeder::class);
+        $this->call(ServicesTableSeeder::class);
+        $this->call(UnitPlanTableSeeder::class);
+
         Model::reguard();
     }
 }

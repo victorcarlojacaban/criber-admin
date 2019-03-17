@@ -17,9 +17,10 @@ class CreateRoomsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('location_id');
             $table->string('name');
-            $table->double('price');
+            $table->string('price');
             $table->json('features');
             $table->string('image_name');
+            $table->tinyInteger('status')->comment('1:available, 0:not available');
             $table->timestamps();
         });
 
