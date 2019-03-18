@@ -92,6 +92,13 @@ return [
 	"not_found" => "That Amenity does not exist.",
 	"update_error" => "There was a problem updating this Amenity. Please try again.",
 	],
+	"rooms" => [
+	"already_exists" => "That Room already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this Room. Please try again.",
+	"delete_error" => "There was a problem deleting this Room. Please try again.",
+	"not_found" => "That Room does not exist.",
+	"update_error" => "There was a problem updating this Room. Please try again.",
+	],
 	],
 	"frontend" => [
 	"auth" => [

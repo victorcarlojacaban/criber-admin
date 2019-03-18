@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Repositories\Backend\Amenity;
+namespace App\Repositories\Backend\Room;
 
 use DB;
 use Carbon\Carbon;
-use App\Models\Amenity\Amenity;
+use App\Models\Room\Room;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class AmenityRepository.
+ * Class RoomRepository.
  */
-class AmenityRepository extends BaseRepository
+class RoomRepository extends BaseRepository
 {
     /**
      * Associated Repository Model.
      */
-    const MODEL = Amenity::class;
+    const MODEL = Room::class;
 
     /**
      * This method is used by Table Controller
@@ -29,11 +29,9 @@ class AmenityRepository extends BaseRepository
     {
         return $this->query()
             ->select([
-                config('module.amenities.table').'.id',
-                config('module.amenities.table').'.name',
-                config('module.amenities.table').'.icon_name',
-                config('module.amenities.table').'.created_at',
-                config('module.amenities.table').'.updated_at',
+                config('module.rooms.table').'.id',
+                config('module.rooms.table').'.created_at',
+                config('module.rooms.table').'.updated_at',
             ]);
     }
 
@@ -46,41 +44,41 @@ class AmenityRepository extends BaseRepository
      */
     public function create(array $input)
     {
-        if (Amenity::create($input)) {
+        if (Room::create($input)) {
             return true;
         }
-        throw new GeneralException(trans('exceptions.backend.amenities.create_error'));
+        throw new GeneralException(trans('exceptions.backend.rooms.create_error'));
     }
 
     /**
      * For updating the respective Model in storage
      *
-     * @param Amenity $amenity
+     * @param Room $room
      * @param  $input
      * @throws GeneralException
      * return bool
      */
-    public function update(Amenity $amenity, array $input)
+    public function update(Room $room, array $input)
     {
-    	if ($amenity->update($input))
+    	if ($room->update($input))
             return true;
 
-        throw new GeneralException(trans('exceptions.backend.amenities.update_error'));
+        throw new GeneralException(trans('exceptions.backend.rooms.update_error'));
     }
 
     /**
      * For deleting the respective model from storage
      *
-     * @param Amenity $amenity
+     * @param Room $room
      * @throws GeneralException
      * @return bool
      */
-    public function delete(Amenity $amenity)
+    public function delete(Room $room)
     {
-        if ($amenity->delete()) {
+        if ($room->delete()) {
             return true;
         }
 
-        throw new GeneralException(trans('exceptions.backend.amenities.delete_error'));
+        throw new GeneralException(trans('exceptions.backend.rooms.delete_error'));
     }
 }

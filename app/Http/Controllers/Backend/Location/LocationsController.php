@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Location;
 
+use App\Models\Amenity\Amenity;
 use App\Models\Location\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -58,9 +59,13 @@ class LocationsController extends Controller
         // $blogCategories = BlogCategory::getSelectData();
         // $blogTags = BlogTag::getSelectData();
         // 
-        $amenities = [
-            'Wifi', 'Swimming Pool', 'Tennis', 'Playground'
-        ];
+        // $amenities = [
+        //     'Wifi', 'Swimming Pool', 'Tennis', 'Playground'
+        // ];
+
+        $amenities = Amenity::getSelectData();
+
+        // dd(var_dump($amenities));
 
         return new CreateResponse($amenities);
         // return new CreateResponse('backend.locations.create');

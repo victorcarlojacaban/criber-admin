@@ -122,6 +122,13 @@ return [
 	"management" => "Amenity Management",
 	"main" => "Amenities",
 	],
+	"rooms" => [
+	"all" => "All Rooms",
+	"create" => "Create Room",
+	"edit" => "Edit Room",
+	"management" => "Room Management",
+	"main" => "Rooms",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",

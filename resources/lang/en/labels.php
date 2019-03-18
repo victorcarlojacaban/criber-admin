@@ -256,6 +256,16 @@ return [
 	"createdat" => "Created At",
 	],
 	],
+	"rooms" => [
+	"create" => "Create Room",
+	"edit" => "Edit Room",
+	"management" => "Room Management",
+	"title" => "Rooms",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
 	],
 	"frontend" => [
 	"auth" => [

@@ -46,6 +46,9 @@ class LocationRepository extends BaseRepository
      */
     public function create(array $input)
     {
+        $input['unit_amenities'] = json_encode($input['unit_amenities']);
+        $input['building_amenities'] = json_encode($input['building_amenities']);
+
         if (Location::create($input)) {
             return true;
         }

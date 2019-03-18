@@ -64,5 +64,10 @@ return [
 	"deleted" => "The Amenity was successfully deleted.",
 	"updated" => "The Amenity was successfully updated.",
 	],
+	"rooms" => [
+	"created" => "The Room was successfully created.",
+	"deleted" => "The Room was successfully deleted.",
+	"updated" => "The Room was successfully updated.",
+	],
 	],
 ];

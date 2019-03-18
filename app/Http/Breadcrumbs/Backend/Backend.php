@@ -19,3 +19,4 @@ require __DIR__.'/LogViewer.php';
 
 require __DIR__.'/Location.php';
 require __DIR__.'/Amenity.php';
+require __DIR__.'/Room.php';

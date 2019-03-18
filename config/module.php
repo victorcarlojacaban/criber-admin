@@ -26,4 +26,7 @@ return [
 	"amenities" => [
 	"table" => "amenities",
 	],
+	"rooms" => [
+	"table" => "rooms",
+	],
 ];

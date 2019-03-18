@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Models\Amenity;
+namespace App\Models\Room;
 
-use App\Models\BaseModel;
 use App\Models\ModelTrait;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Amenity\Traits\AmenityAttribute;
-use App\Models\Amenity\Traits\AmenityRelationship;
+use App\Models\Room\Traits\RoomAttribute;
+use App\Models\Room\Traits\RoomRelationship;
 
-class Amenity extends BaseModel
+class Room extends Model
 {
     use ModelTrait,
-        AmenityAttribute,
-    	AmenityRelationship {
-            // AmenityAttribute::getEditButtonAttribute insteadof ModelTrait;
+        RoomAttribute,
+    	RoomRelationship {
+            // RoomAttribute::getEditButtonAttribute insteadof ModelTrait;
         }
 
     /**
@@ -25,7 +24,7 @@ class Amenity extends BaseModel
      * The database table used by the model.
      * @var string
      */
-    protected $table = 'amenities';
+    protected $table = 'rooms';
 
     /**
      * Mass Assignable fields of model
