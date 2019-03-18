@@ -29,7 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AmenitiesTableSeeder::class);
         $this->call(RoomsTableSeeder::class);
         $this->call(ServicesTableSeeder::class);
-        $this->call(UnitPlanTableSeeder::class);
 
         Model::reguard();
     }

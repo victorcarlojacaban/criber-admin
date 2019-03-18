@@ -115,6 +115,13 @@ return [
 	"management" => "Location Management",
 	"main" => "Locations",
 	],
+	"amenities" => [
+	"all" => "All Amenities",
+	"create" => "Create Amenity",
+	"edit" => "Edit Amenity",
+	"management" => "Amenity Management",
+	"main" => "Amenities",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",

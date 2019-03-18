@@ -59,5 +59,10 @@ return [
 	"deleted" => "The Location was successfully deleted.",
 	"updated" => "The Location was successfully updated.",
 	],
+	"amenities" => [
+	"created" => "The Amenity was successfully created.",
+	"deleted" => "The Amenity was successfully deleted.",
+	"updated" => "The Amenity was successfully updated.",
+	],
 	],
 ];

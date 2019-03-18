@@ -246,6 +246,16 @@ return [
 	"createdat" => "Created At",
 	],
 	],
+	"amenities" => [
+	"create" => "Create Amenity",
+	"edit" => "Edit Amenity",
+	"management" => "Amenity Management",
+	"title" => "Amenities",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
 	],
 	"frontend" => [
 	"auth" => [

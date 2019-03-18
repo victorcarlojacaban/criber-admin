@@ -18,9 +18,13 @@ class CreateLocationsTable extends Migration
             $table->string('name');
             $table->string('title');
             $table->string('complete_address', 500);
-            $table->text('overview');
-            $table->json('unit_amenities');
-            $table->json('building_amenities');
+            $table->text('overview')->nullable();
+            $table->json('unit_amenities')->nullable();
+            $table->json('building_amenities')->nullable();
+            $table->string('payment_of_rent')->nullable();
+            $table->string('security_deposit')->nullable();
+            $table->text('regulation_info')->nullable();
+            $table->string('address_map_src', 500)->nullable();
             $table->timestamps();
         });
     }

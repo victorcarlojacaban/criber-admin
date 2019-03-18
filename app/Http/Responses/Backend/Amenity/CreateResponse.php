@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Responses\Backend\Location;
+namespace App\Http\Responses\Backend\Amenity;
 
 use Illuminate\Contracts\Support\Responsable;
 
 class CreateResponse implements Responsable
 {
-    protected $amenities;
-
     /**
      * To Response
      *
@@ -15,15 +13,8 @@ class CreateResponse implements Responsable
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function __construct($amenities)
-    {
-        $this->amenities = $amenities;
-    }
-
     public function toResponse($request)
     {
-        return view('backend.locations.create')->with([
-            'amenities' => $this->amenities,
-        ]);
+        return view('backend.amenities.create');
     }
 }

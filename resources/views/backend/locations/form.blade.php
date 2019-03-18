@@ -37,6 +37,28 @@
                     </div><!--col-lg-10-->
                 </div>
             </div>
+
+             <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="form-group">
+                    {{ Form::label('unit_amenities', 'Unit Amenities', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
+
+                    <div class="col-lg-10 mce-box">
+                        
+                        {{ Form::select('unit_amenities[]', $amenities, null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
+                    </div><!--col-lg-10-->
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="form-group">
+                    {{ Form::label('building_amenities', 'Building Amenities', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
+
+                    <div class="col-lg-10 mce-box">
+                        
+                        {{ Form::select('building_amenities[]', $amenities, null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
+                    </div><!--col-lg-10-->
+                </div>
+            </div>
         </div>
     </div>
 </div><!--box-body-->

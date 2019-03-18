@@ -25,6 +25,8 @@ class LocationsTableSeeder extends Seeder
                 'overview'    	    => 'For those who actually experienced renting rooms, they will pretty much agree that it’s simply a place for them to clean themselves, sleep and spend most of their time in their respective rooms. At Criber, we want our members to communicate and interact with one another. To achieve this, we will organise events on a weekly, monthly, quarterly and yearly activities so that our members are not foreign with one another regardless of the location. In other words, members of Criber will have the opportunity to interact with other members located in other parts of Klang Valley.',
                 'building_amenities' => '["1","2","3","4"]',
                 'unit_amenities'  => '["5","6","7","8","9","10","11"]',
+                'payment_of_rent'  => 'According to the date of entry ',
+                'security_deposit' => '1 Month Rent',
                 'created_at' 	  => Carbon::now(),
                 'updated_at'      => Carbon::now(),
             ],

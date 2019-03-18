@@ -55,7 +55,15 @@ class LocationsController extends Controller
      */
     public function create(CreateLocationRequest $request)
     {
-        return new CreateResponse('backend.locations.create');
+        // $blogCategories = BlogCategory::getSelectData();
+        // $blogTags = BlogTag::getSelectData();
+        // 
+        $amenities = [
+            'Wifi', 'Swimming Pool', 'Tennis', 'Playground'
+        ];
+
+        return new CreateResponse($amenities);
+        // return new CreateResponse('backend.locations.create');
     }
     /**
      * Store a newly created resource in storage.
