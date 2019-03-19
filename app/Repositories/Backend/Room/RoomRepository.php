@@ -8,6 +8,7 @@ use App\Models\Room\Room;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class RoomRepository.
@@ -18,6 +19,22 @@ class RoomRepository extends BaseRepository
      * Associated Repository Model.
      */
     const MODEL = Room::class;
+
+    protected $upload_path;
+
+    /**
+     * Storage Class Object.
+     *
+     * @var \Illuminate\Support\Facades\Storage
+     */
+    protected $storage;
+
+    public function __construct()
+    {
+        $this->upload_path = 'img'.DIRECTORY_SEPARATOR.'rooms'.DIRECTORY_SEPARATOR;
+        //$this->upload_path =  "/Users/victorcarlojacabaniii/MyFiles/criber/public/images/rooms";
+        $this->storage = Storage::disk('public');
+    }
 
     /**
      * This method is used by Table Controller
@@ -50,6 +67,8 @@ class RoomRepository extends BaseRepository
     public function create(array $input)
     {
         $input['features'] = json_encode($input['features']);
+        $input = $this->uploadImage($input);
+
         if (Room::create($input)) {
             return true;
         }
@@ -67,6 +86,12 @@ class RoomRepository extends BaseRepository
     public function update(Room $room, array $input)
     {
         $input['features'] = json_encode($input['features']);
+        // Uploading Image
+        if (array_key_exists('image_name', $input)) {
+            $this->deleteOldFile($room);
+            $input = $this->uploadImage($input);
+        }
+        
     	if ($room->update($input))
             return true;
 
@@ -87,5 +112,40 @@ class RoomRepository extends BaseRepository
         }
 
         throw new GeneralException(trans('exceptions.backend.rooms.delete_error'));
+    }
+
+    /**
+     * Upload Image.
+     *
+     * @param array $input
+     *
+     * @return array $input
+     */
+    public function uploadImage($input)
+    {
+        $avatar = $input['image_name'];
+
+
+        if (isset($input['image_name']) && !empty($input['image_name'])) {
+            $fileName = time().$avatar->getClientOriginalName();
+
+            $this->storage->put($this->upload_path.$fileName, file_get_contents($avatar->getRealPath()));
+
+            $input = array_merge($input, ['image_name' => $fileName]);
+
+            return $input;
+        }
+    }
+
+    /**
+     * Destroy Old Image.
+     *
+     * @param int $id
+     */
+    public function deleteOldFile($model)
+    {
+        $fileName = $model->featured_image;
+
+        return $this->storage->delete($this->upload_path.$fileName);
     }
 }

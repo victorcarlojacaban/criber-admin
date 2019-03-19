@@ -17,6 +17,7 @@ class CreateLocationsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('title');
+            $table->string('main_image')->nullable();
             $table->string('complete_address', 500);
             $table->text('overview')->nullable();
             $table->json('unit_amenities')->nullable();

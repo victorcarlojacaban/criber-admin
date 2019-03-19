@@ -41,6 +41,9 @@ class LocationsTableController extends Controller
             ->addColumn('title', function ($location) {
                 return $location->title;
             })
+             ->addColumn('main_image', function ($location) {
+                return $location->main_image;
+            })
             ->addColumn('created_at', function ($location) {
                 return Carbon::parse($location->created_at)->toDateString();
             })

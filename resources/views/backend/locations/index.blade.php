@@ -24,6 +24,7 @@
                             <th>{{ trans('labels.backend.locations.table.id') }}</th>
                             <th>Name</th>
                             <th>Title</th>
+                            <th>Main Image</th>
                             <th>{{ trans('labels.backend.locations.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -59,6 +60,7 @@
                     {data: 'id', name: '{{config('module.locations.table')}}.id'},
                     {data: 'name', name: '{{config('module.locations.table')}}.name'},
                     {data: 'title', name: '{{config('module.locations.table')}}.title'},
+                    {data: 'main_image', name: '{{config('module.locations.table')}}.main_image'},
                     {data: 'created_at', name: '{{config('module.locations.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],
