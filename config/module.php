@@ -32,4 +32,7 @@ return [
 	"features" => [
 	"table" => "features",
 	],
+	"testimonials" => [
+	"table" => "testimonials",
+	],
 ];
