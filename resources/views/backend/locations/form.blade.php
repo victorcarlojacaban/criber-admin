@@ -44,7 +44,7 @@
 
                     <div class="col-lg-10 mce-box">
                         
-                        {{ Form::select('unit_amenities[]', $amenities, null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
+                        {{ Form::select('unit_amenities[]', $amenities, $selectedUnitAmenities ?? null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
                     </div><!--col-lg-10-->
                 </div>
             </div>
@@ -55,7 +55,7 @@
 
                     <div class="col-lg-10 mce-box">
                         
-                        {{ Form::select('building_amenities[]', $amenities, null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
+                        {{ Form::select('building_amenities[]', $amenities, $selectedBuildingAmenities ?? null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
                     </div><!--col-lg-10-->
                 </div>
             </div>

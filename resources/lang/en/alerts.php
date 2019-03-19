@@ -69,5 +69,10 @@ return [
 	"deleted" => "The Room was successfully deleted.",
 	"updated" => "The Room was successfully updated.",
 	],
+	"features" => [
+	"created" => "The Feature was successfully created.",
+	"deleted" => "The Feature was successfully deleted.",
+	"updated" => "The Feature was successfully updated.",
+	],
 	],
 ];

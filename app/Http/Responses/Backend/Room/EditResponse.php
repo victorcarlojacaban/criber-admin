@@ -11,12 +11,18 @@ class EditResponse implements Responsable
      */
     protected $rooms;
 
+    protected $features;
+
+    protected $locations;
+
     /**
      * @param App\Models\Room\Room $rooms
      */
-    public function __construct($rooms)
+    public function __construct($rooms, $features, $locations)
     {
-        $this->rooms = $rooms;
+        $this->rooms     = $rooms;
+        $this->features  = $features;
+        $this->locations = $locations;
     }
 
     /**
@@ -28,8 +34,15 @@ class EditResponse implements Responsable
      */
     public function toResponse($request)
     {
+        $roomData = $this->rooms->toArray();
+
+        $selectedFeatures = json_decode($roomData['features']);
+
         return view('backend.rooms.edit')->with([
-            'rooms' => $this->rooms
+            'room'      => $this->rooms,
+            'locations' => $this->locations,
+            'features'  => $this->features,
+            'selectedFeatures' => $selectedFeatures ?? null,
         ]);
     }
 }

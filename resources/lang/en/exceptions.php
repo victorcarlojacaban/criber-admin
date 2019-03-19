@@ -99,6 +99,13 @@ return [
 	"not_found" => "That Room does not exist.",
 	"update_error" => "There was a problem updating this Room. Please try again.",
 	],
+	"features" => [
+	"already_exists" => "That Feature already exists. Please choose a different name.",
+	"create_error" => "There was a problem creating this Feature. Please try again.",
+	"delete_error" => "There was a problem deleting this Feature. Please try again.",
+	"not_found" => "That Feature does not exist.",
+	"update_error" => "There was a problem updating this Feature. Please try again.",
+	],
 	],
 	"frontend" => [
 	"auth" => [

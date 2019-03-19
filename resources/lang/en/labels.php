@@ -266,6 +266,16 @@ return [
 	"createdat" => "Created At",
 	],
 	],
+	"features" => [
+	"create" => "Create Feature",
+	"edit" => "Edit Feature",
+	"management" => "Feature Management",
+	"title" => "Features",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
 	],
 	"frontend" => [
 	"auth" => [

@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Models\Location;
+namespace App\Models\Feature;
 
 use App\Models\BaseModel;
 use App\Models\ModelTrait;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Location\Traits\LocationAttribute;
-use App\Models\Location\Traits\LocationRelationship;
+use App\Models\Feature\Traits\FeatureAttribute;
+use App\Models\Feature\Traits\FeatureRelationship;
 
-class Location extends BaseModel
+class Feature extends BaseModel
 {
     use ModelTrait,
-        LocationAttribute,
-    	LocationRelationship {
-            // LocationAttribute::getEditButtonAttribute insteadof ModelTrait;
+        FeatureAttribute,
+    	FeatureRelationship {
+            // FeatureAttribute::getEditButtonAttribute insteadof ModelTrait;
         }
 
     /**
@@ -25,7 +25,7 @@ class Location extends BaseModel
      * The database table used by the model.
      * @var string
      */
-    protected $table = 'locations';
+    protected $table = 'features';
 
     /**
      * Mass Assignable fields of model

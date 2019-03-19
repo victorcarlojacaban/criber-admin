@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend\Room;
 
+use App\Models\Feature\Feature;
+use App\Models\Location\Location;
 use App\Models\Room\Room;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -55,7 +57,11 @@ class RoomsController extends Controller
      */
     public function create(CreateRoomRequest $request)
     {
-        return new CreateResponse('backend.rooms.create');
+        $features = Feature::getSelectData();
+
+        $locations = Location::getSelectData();
+
+        return new CreateResponse($features, $locations);
     }
     /**
      * Store a newly created resource in storage.
@@ -81,7 +87,11 @@ class RoomsController extends Controller
      */
     public function edit(Room $room, EditRoomRequest $request)
     {
-        return new EditResponse($room);
+        $features = Feature::getSelectData();
+
+        $locations = Location::getSelectData();
+
+        return new EditResponse($room, $features, $locations);
     }
     /**
      * Update the specified resource in storage.

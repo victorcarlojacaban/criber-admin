@@ -1,32 +1,28 @@
 @extends ('backend.layouts.app')
 
-@section ('title', trans('labels.backend.rooms.management'))
+@section ('title', trans('labels.backend.features.management'))
 
 @section('page-header')
-    <h1>{{ trans('labels.backend.rooms.management') }}</h1>
+    <h1>{{ trans('labels.backend.features.management') }}</h1>
 @endsection
 
 @section('content')
     <div class="box box-info">
         <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('labels.backend.rooms.management') }}</h3>
+            <h3 class="box-title">{{ trans('labels.backend.features.management') }}</h3>
 
             <div class="box-tools pull-right">
-                @include('backend.rooms.partials.rooms-header-buttons')
+                @include('backend.features.partials.features-header-buttons')
             </div>
         </div><!--box-header with-border-->
 
         <div class="box-body">
             <div class="table-responsive data-table-wrapper">
-                <table id="rooms-table" class="table table-condensed table-hover table-bordered">
+                <table id="features-table" class="table table-condensed table-hover table-bordered">
                     <thead>
                         <tr>
-                            <th>{{ trans('labels.backend.rooms.table.id') }}</th>
-                            <th>Name</th>
-                            <th>Location</th>
-                            <th>Price</th>
-                            <th>Image</th>
-                            <th>{{ trans('labels.backend.pages.table.createdat') }}</th>
+                            <th>{{ trans('labels.backend.features.table.id') }}</th>
+                            <th>{{ trans('labels.backend.features.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
@@ -50,20 +46,16 @@
     <script>
         //Below written line is short form of writing $(document).ready(function() { })
         $(function() {
-            var dataTable = $('#rooms-table').dataTable({
+            var dataTable = $('#features-table').dataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '{{ route("admin.rooms.get") }}',
+                    url: '{{ route("admin.features.get") }}',
                     type: 'post'
                 },
                 columns: [
-                    {data: 'id', name: '{{config('module.rooms.table')}}.id'},
-                    {data: 'room_name', name: '{{config('module.rooms.table')}}.room_name'},
-                    {data: 'location_name', name: '{{config('module.rooms.table')}}.location_name'},
-                    {data: 'price', name: '{{config('module.rooms.table')}}.price'},
-                    {data: 'image_name', name: '{{config('module.rooms.table')}}.image_name'},
-                    {data: 'created_at', name: '{{config('module.rooms.table')}}.created_at'},
+                    {data: 'id', name: '{{config('module.features.table')}}.id'},
+                    {data: 'created_at', name: '{{config('module.features.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],
                 order: [[0, "asc"]],

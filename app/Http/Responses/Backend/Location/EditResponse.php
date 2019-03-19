@@ -11,12 +11,15 @@ class EditResponse implements Responsable
      */
     protected $locations;
 
+    protected $amenities;
+
     /**
      * @param App\Models\Location\Location $locations
      */
-    public function __construct($locations)
+    public function __construct($locations, $amenities)
     {
         $this->locations = $locations;
+        $this->amenities = $amenities;
     }
 
     /**
@@ -28,8 +31,17 @@ class EditResponse implements Responsable
      */
     public function toResponse($request)
     {
+        $locationData = $this->locations->toArray();
+
+        $selectedUnitAmenities     = json_decode($locationData['unit_amenities']);
+        $selectedBuildingAmenities = json_decode($locationData['building_amenities']);
+
         return view('backend.locations.edit')->with([
-            'locations' => $this->locations
+            'location' => $this->locations,
+            'amenities' => $this->amenities,
+            'selectedUnitAmenities' => $selectedUnitAmenities ?? null,
+            'selectedBuildingAmenities' => $selectedBuildingAmenities ?? null,
+
         ]);
     }
 }

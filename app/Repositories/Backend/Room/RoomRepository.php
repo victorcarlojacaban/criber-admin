@@ -28,10 +28,15 @@ class RoomRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
+            ->leftjoin(config('module.locations.table'), config('module.locations.table').'.id', '=', config('module.rooms.table').'.location_id')
             ->select([
                 config('module.rooms.table').'.id',
+                config('module.rooms.table').'.name as room_name',
+                config('module.rooms.table').'.price',
+                config('module.rooms.table').'.image_name',
                 config('module.rooms.table').'.created_at',
                 config('module.rooms.table').'.updated_at',
+                config('module.locations.table').'.name as location_name',
             ]);
     }
 
@@ -44,6 +49,7 @@ class RoomRepository extends BaseRepository
      */
     public function create(array $input)
     {
+        $input['features'] = json_encode($input['features']);
         if (Room::create($input)) {
             return true;
         }
@@ -60,6 +66,7 @@ class RoomRepository extends BaseRepository
      */
     public function update(Room $room, array $input)
     {
+        $input['features'] = json_encode($input['features']);
     	if ($room->update($input))
             return true;
 

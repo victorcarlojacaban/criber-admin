@@ -65,6 +65,9 @@ class LocationRepository extends BaseRepository
      */
     public function update(Location $location, array $input)
     {
+        $input['unit_amenities'] = json_encode($input['unit_amenities']);
+        $input['building_amenities'] = json_encode($input['building_amenities']);
+        
     	if ($location->update($input))
             return true;
 

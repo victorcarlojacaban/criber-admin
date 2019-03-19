@@ -38,6 +38,18 @@ class RoomsTableController extends Controller
     {
         return Datatables::of($this->room->getForDataTable())
             ->escapeColumns(['id'])
+            ->addColumn('room_name', function ($room) {
+                return $room->room_name;
+            })
+            ->addColumn('location_name', function ($room) {
+                return $room->location_name;
+            })
+            ->addColumn('price', function ($room) {
+                return $room->price;
+            })
+             ->addColumn('image_name', function ($room) {
+                return $room->image_name;
+            })
             ->addColumn('created_at', function ($room) {
                 return Carbon::parse($room->created_at)->toDateString();
             })

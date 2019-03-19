@@ -56,20 +56,11 @@ class LocationsController extends Controller
      */
     public function create(CreateLocationRequest $request)
     {
-        // $blogCategories = BlogCategory::getSelectData();
-        // $blogTags = BlogTag::getSelectData();
-        // 
-        // $amenities = [
-        //     'Wifi', 'Swimming Pool', 'Tennis', 'Playground'
-        // ];
-
         $amenities = Amenity::getSelectData();
 
-        // dd(var_dump($amenities));
-
         return new CreateResponse($amenities);
-        // return new CreateResponse('backend.locations.create');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -94,7 +85,9 @@ class LocationsController extends Controller
      */
     public function edit(Location $location, EditLocationRequest $request)
     {
-        return new EditResponse($location);
+        $amenities = Amenity::getSelectData();
+
+        return new EditResponse($location, $amenities);
     }
     /**
      * Update the specified resource in storage.

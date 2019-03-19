@@ -129,6 +129,13 @@ return [
 	"management" => "Room Management",
 	"main" => "Rooms",
 	],
+	"features" => [
+	"all" => "All Features",
+	"create" => "Create Feature",
+	"edit" => "Edit Feature",
+	"management" => "Feature Management",
+	"main" => "Features",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",

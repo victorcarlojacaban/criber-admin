@@ -23,7 +23,7 @@ class RoomsTableSeeder extends Seeder
                 'name'  	  => 'Rooms To - 1(25m2)',
                 'price' 	  => 'USD 6.35 million',
                 'features'    => '["1","2"]',
-                'image_name'  => '',
+                'image_name'  => 'parkview.jpg',
                 'status' 	  => 1,
                 'created_at'  => Carbon::now(),
                 'updated_at'  => Carbon::now(),
