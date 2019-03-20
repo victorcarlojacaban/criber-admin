@@ -20,8 +20,8 @@ class CreateLocationsTable extends Migration
             $table->string('main_image')->nullable();
             $table->string('complete_address', 500);
             $table->text('overview')->nullable();
-            $table->json('unit_amenities')->nullable();
-            $table->json('building_amenities')->nullable();
+            $table->text('unit_amenities')->nullable();
+            $table->text('building_amenities')->nullable();
             $table->string('payment_of_rent')->nullable();
             $table->string('security_deposit')->nullable();
             $table->text('regulation_info')->nullable();
