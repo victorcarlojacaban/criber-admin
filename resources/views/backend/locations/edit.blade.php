@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    {{ Form::model($location, ['route' => ['admin.locations.update', $location], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-location']) }}
+    {{ Form::model($location, ['route' => ['admin.locations.update', $location], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH', 'id' => 'edit-location', 'files' => true]) }}
 
         <div class="box box-info">
             <div class="box-header with-border">

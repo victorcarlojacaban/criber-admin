@@ -21,4 +21,3 @@ require __DIR__.'/Location.php';
 require __DIR__.'/Amenity.php';
 require __DIR__.'/Room.php';
 require __DIR__.'/Feature.php';
-require __DIR__.'/Testimonial.php';

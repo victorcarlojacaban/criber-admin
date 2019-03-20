@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    {{ Form::open(['route' => 'admin.locations.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'id' => 'create-location']) }}
+    {{ Form::open(['route' => 'admin.locations.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'id' => 'create-location', 'files' => true]) }}
 
         <div class="box box-info">
             <div class="box-header with-border">

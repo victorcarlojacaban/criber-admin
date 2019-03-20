@@ -20,6 +20,31 @@
             </div>
 
              <div class="col-lg-8 col-md-8 col-sm-8">
+                 <div class="form-group">
+                 {{ Form::label('main_image', 'Location Image', ['class' => 'col-lg-2 control-label required']) }}
+                 @if(!empty($location->main_image))
+                        <div class="col-lg-3">
+                         <!--    <img src="{{ Storage::disk('public')->url('img/locations/' . $location->main_image) }}" height="80" width="80"> -->
+                         {{ $location->main_image }}<br/>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="custom-file-input">
+                                <input type="file" name="main_image" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" />
+                                <label for="file-1"><i class="fa fa-upload"></i><span>Choose a file</span></label>
+                            </div>
+                        </div>
+                    @else
+                        <div class="col-lg-5">
+                            <div class="custom-file-input">
+                                    <input type="file" name="main_image" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" />
+                                    <label for="file-1"><i class="fa fa-upload"></i><span>Choose a file</span></label>
+                            </div>
+                        </div>
+                    @endif
+                </div><!--form control-->
+            </div>
+
+             <div class="col-lg-8 col-md-8 col-sm-8">
                 <div class="form-group">
                     {{ Form::label('complete_address', 'Complete Address', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
                     <div class="col-lg-10 col-md-10 col-sm-10">

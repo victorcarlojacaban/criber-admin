@@ -20,6 +20,7 @@ class LocationsTableSeeder extends Seeder
         $locations = [
             [
                 'name'              => 'Jalan Klang Lama',
+                'main_image'        => 'parkview.jpg',
                 'title'             => 'Room in the 2nd Floor 2 BR Unit in Puri Park View',
                 'complete_address'  => 'PS-4, Taman Evergreen, Jalan Klang Lama, Batu 4, 58100 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia',
                 'overview'    	    => 'For those who actually experienced renting rooms, they will pretty much agree that it’s simply a place for them to clean themselves, sleep and spend most of their time in their respective rooms. At Criber, we want our members to communicate and interact with one another. To achieve this, we will organise events on a weekly, monthly, quarterly and yearly activities so that our members are not foreign with one another regardless of the location. In other words, members of Criber will have the opportunity to interact with other members located in other parts of Klang Valley.',
