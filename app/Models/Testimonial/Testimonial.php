@@ -2,12 +2,13 @@
 
 namespace App\Models\Testimonial;
 
+use App\Models\BaseModel;
 use App\Models\ModelTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Testimonial\Traits\TestimonialAttribute;
 use App\Models\Testimonial\Traits\TestimonialRelationship;
 
-class Testimonial extends Model
+class Testimonial extends BaseModel
 {
     use ModelTrait,
         TestimonialAttribute,

@@ -30,6 +30,10 @@ class TestimonialRepository extends BaseRepository
         return $this->query()
             ->select([
                 config('module.testimonials.table').'.id',
+                config('module.testimonials.table').'.tenant_name',
+                config('module.testimonials.table').'.message',
+                config('module.testimonials.table').'.image_url',
+                config('module.testimonials.table').'.video_url',
                 config('module.testimonials.table').'.created_at',
                 config('module.testimonials.table').'.updated_at',
             ]);

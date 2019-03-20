@@ -55,7 +55,9 @@ class TestimonialsController extends Controller
      */
     public function create(CreateTestimonialRequest $request)
     {
-        return new CreateResponse('backend.testimonials.create');
+        $testimonials = Testimonial::getSelectData();
+
+        return new CreateResponse($testimonials);
     }
     /**
      * Store a newly created resource in storage.
@@ -113,5 +115,5 @@ class TestimonialsController extends Controller
         //returning with successfull message
         return new RedirectResponse(route('admin.testimonials.index'), ['flash_success' => trans('alerts.backend.testimonials.deleted')]);
     }
-    
+
 }

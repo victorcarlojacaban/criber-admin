@@ -6,6 +6,21 @@ use Illuminate\Contracts\Support\Responsable;
 
 class CreateResponse implements Responsable
 {
+
+    protected $testimonials;
+
+    /**
+     * To Response
+     *
+     * @param \App\Http\Requests\Request $request
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function __construct($testimonials)
+    {
+        $this->testimonials = $testimonials;
+    }
+
     /**
      * To Response
      *
@@ -15,6 +30,8 @@ class CreateResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.testimonials.create');
+        return view('backend.testimonials.create')->with([
+            'testimonials' => $this->testimonials,
+        ]);
     }
 }

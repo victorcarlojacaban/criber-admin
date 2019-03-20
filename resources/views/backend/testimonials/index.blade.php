@@ -22,6 +22,10 @@
                     <thead>
                         <tr>
                             <th>{{ trans('labels.backend.testimonials.table.id') }}</th>
+                            <th>Name</th>
+                            <th>Message</th>
+                            <th>Image</th>
+                            <th>Video</th>
                             <th>{{ trans('labels.backend.testimonials.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
@@ -55,6 +59,10 @@
                 },
                 columns: [
                     {data: 'id', name: '{{config('module.testimonials.table')}}.id'},
+                    {data: 'tenant_name', name: '{{config('module.testimonials.table')}}.tenant_name'},
+                    {data: 'message', name: '{{config('module.testimonials.table')}}.message'},
+                    {data: 'image_url', name: '{{config('module.testimonials.table')}}.image_url'},
+                    {data: 'video_url', name: '{{config('module.testimonials.table')}}.video_url'},
                     {data: 'created_at', name: '{{config('module.testimonials.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],

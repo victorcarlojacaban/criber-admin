@@ -38,6 +38,18 @@ class TestimonialsTableController extends Controller
     {
         return Datatables::of($this->testimonial->getForDataTable())
             ->escapeColumns(['id'])
+            ->addColumn('tenant_name', function ($testimonial) {
+                return $testimonial->tenant_name;
+            })
+            ->addColumn('message', function ($testimonial) {
+                return $testimonial->message;
+            })
+            ->addColumn('image_url', function ($testimonial) {
+                return $testimonial->image_url;
+            })
+             ->addColumn('video_url', function ($testimonial) {
+                return $testimonial->video_url;
+            })
             ->addColumn('created_at', function ($testimonial) {
                 return Carbon::parse($testimonial->created_at)->toDateString();
             })
