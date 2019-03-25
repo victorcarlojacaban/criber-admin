@@ -8,12 +8,25 @@ use App\Models\Testimonial\Testimonial;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class TestimonialRepository.
  */
 class TestimonialRepository extends BaseRepository
 {
+
+    protected $image_path;
+    protected $video_path;
+    protected $storage;
+
+    public function __construct()
+    {
+        $this->image_path = 'img' . DIRECTORY_SEPARATOR . 'testimonials' . DIRECTORY_SEPARATOR;
+        $this->video_path = 'video' . DIRECTORY_SEPARATOR . 'testimonials' . DIRECTORY_SEPARATOR;
+        $this->storage = Storage::disk('public');
+    }
+
     /**
      * Associated Repository Model.
      */
@@ -48,10 +61,51 @@ class TestimonialRepository extends BaseRepository
      */
     public function create(array $input)
     {
+        $input['image_url'] = $this->uploadImage($input['image_url']);
+        $input['video_url'] = $this->uploadVideo($input['video_url']);
+
         if (Testimonial::create($input)) {
             return true;
         }
         throw new GeneralException(trans('exceptions.backend.testimonials.create_error'));
+    }
+
+    /**
+     * Upload Image.
+     *
+     * @param array $input
+     *
+     * @return array $input
+     */
+    public function uploadImage($image_url)
+    {
+        $image = $image_url;
+
+        if (isset($image_url) && !empty($image_url)) {
+            $fileName = time() . $image->getClientOriginalName();
+
+            $this->storage->put($this->image_path . $fileName, file_get_contents($image->getRealPath()));
+            return $fileName;
+        }
+    }
+
+    /**
+     * Upload Video.
+     *
+     * @param array $input
+     *
+     * @return array $input
+     */
+    public function uploadVideo($video_url)
+    {
+        $video = $video_url;
+
+        if (isset($video_url) && !empty($video_url)) {
+            $fileName = time() . $video->getClientOriginalName();
+
+            $this->storage->put($this->video_path . $fileName, file_get_contents($video->getRealPath()));
+            return $fileName;
+        }
     }
 
     /**
