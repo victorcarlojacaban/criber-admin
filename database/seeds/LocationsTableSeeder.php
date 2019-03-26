@@ -29,6 +29,7 @@ class LocationsTableSeeder extends Seeder
                 'payment_of_rent'  => 'According to the date of entry ',
                 'security_deposit' => '1 Month Rent',
                 'created_at' 	  => Carbon::now(),
+                'address_map_src' => 'https://maps.google.com/maps?q=TBM%20-%20Jalan%20Klang%20Lama%20(Tan%20Boon%20Ming%20Sdn.%20Bhd.)&t=&z=13&ie=UTF8&iwloc=&output=embed',
                 'updated_at'      => Carbon::now(),
             ],
         ];

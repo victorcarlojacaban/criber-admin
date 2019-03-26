@@ -25,7 +25,7 @@ class CreateLocationsTable extends Migration
             $table->string('payment_of_rent')->nullable();
             $table->string('security_deposit')->nullable();
             $table->text('regulation_info')->nullable();
-            $table->string('address_map_src', 500)->nullable();
+            $table->string('address_map_src', 2000)->nullable();
             $table->timestamps();
         });
     }
