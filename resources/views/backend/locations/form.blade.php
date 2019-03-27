@@ -104,6 +104,31 @@
                     </div><!--col-lg-10-->
                 </div>
             </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="form-group">
+                    {{ Form::label('address_map_src', 'Address Map SRC', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
+                 
+
+                    <div class="col-lg-10 mce-box">
+                       {{ Form::text('address_map_src', null, ['class' => 'form-control box-size', 'placeholder' => 'Address Map Src', 'required' => 'required']) }}
+                       <b><i>Search on https://www.embedgooglemap.net and copy the src link only, not the whole html like<br/>
+                            <span style="color:blue">"https://maps.google.com/maps?q=Cebu%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"</span>
+                       </i></b>
+                    </div><!--col-lg-10-->
+                </div>
+            </div>
+
+             <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="form-group">
+                    {{ Form::label('regulations', 'Regulations', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
+                 
+
+                    <div class="col-lg-10 mce-box">
+                       {{ Form::textarea('regulations', null, ['class' => 'form-control box-size', 'placeholder' => 'Regulations', 'required' => 'required']) }}
+                    </div><!--col-lg-10-->
+                </div>
+            </div>
         </div>
     </div>
 </div><!--box-body-->
