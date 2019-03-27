@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            
+
         </div>
     </div>
 </div><!--box-body-->
@@ -74,7 +74,7 @@
         Backend.Blog.selectors.GenerateSlugUrl = "{{route('admin.generate.slug')}}";
         Backend.Blog.selectors.SlugUrl = "{{url('/')}}";
         Backend.Blog.init('{{ config('locale.languages.' . app()->getLocale())[1] }}');
-        
+
     </script>
 @endsection
 @endsection

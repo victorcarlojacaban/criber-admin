@@ -91,7 +91,7 @@ class RoomRepository extends BaseRepository
             $this->deleteOldFile($room);
             $input = $this->uploadImage($input);
         }
-        
+
     	if ($room->update($input))
             return true;
 

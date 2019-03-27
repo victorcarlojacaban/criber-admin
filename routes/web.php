@@ -10,6 +10,13 @@ Route::get('lang/{lang}', 'LanguageController@swap');
 
 /* ----------------------------------------------------------------------- */
 
+Route::get('logo/{image}', function ($image) {
+    if (!File::exists($image = storage_path("app/public/img/logo/{$image}"))) {
+        abort(404);
+    }
+    return Image::make($image)->response('jpg');
+});
+
 /*
  * Frontend Routes
  * Namespaces indicate folder structure
