@@ -83,7 +83,8 @@ class TestimonialsController extends Controller
      */
     public function edit(Testimonial $testimonial, EditTestimonialRequest $request)
     {
-        return new EditResponse($testimonial);
+        $testimonial = $testimonial->all();
+        return new EditResponse($testimonial, compact('testimonial'));
     }
     /**
      * Update the specified resource in storage.

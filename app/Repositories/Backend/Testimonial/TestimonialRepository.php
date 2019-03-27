@@ -71,6 +71,50 @@ class TestimonialRepository extends BaseRepository
     }
 
     /**
+     * For updating the respective Model in storage
+     *
+     * @param Testimonial $testimonial
+     * @param  $input
+     * @throws GeneralException
+     * return bool
+     */
+    public function update(Testimonial $testimonial, array $input)
+    {
+        // Uploading Image
+        if (array_key_exists('image_url', $input)) {
+            $this->deleteOldFile($testimonial, $this->image_path);
+            $input['image_url'] = $this->uploadImage($input['image_url']);
+        }
+
+        // Uploading video
+        if (array_key_exists('video_url', $input)) {
+            $this->deleteOldFile($testimonial, $this->video_path);
+            $input['video_url'] = $this->uploadVideo($input['video_url']);
+        }
+
+    	if ($testimonial->update($input))
+            return true;
+
+        throw new GeneralException(trans('exceptions.backend.testimonials.update_error'));
+    }
+
+    /**
+     * For deleting the respective model from storage
+     *
+     * @param Testimonial $testimonial
+     * @throws GeneralException
+     * @return bool
+     */
+    public function delete(Testimonial $testimonial)
+    {
+        if ($testimonial->delete()) {
+            return true;
+        }
+
+        throw new GeneralException(trans('exceptions.backend.testimonials.delete_error'));
+    }
+
+    /**
      * Upload Image.
      *
      * @param array $input
@@ -109,34 +153,15 @@ class TestimonialRepository extends BaseRepository
     }
 
     /**
-     * For updating the respective Model in storage
+     * Destroy Old Image/video.
      *
-     * @param Testimonial $testimonial
-     * @param  $input
-     * @throws GeneralException
-     * return bool
+     * @param int $id
+     * @param string $path
      */
-    public function update(Testimonial $testimonial, array $input)
+    public function deleteOldFile($model, $path)
     {
-    	if ($testimonial->update($input))
-            return true;
+        $fileName = $model->featured_image;
 
-        throw new GeneralException(trans('exceptions.backend.testimonials.update_error'));
-    }
-
-    /**
-     * For deleting the respective model from storage
-     *
-     * @param Testimonial $testimonial
-     * @throws GeneralException
-     * @return bool
-     */
-    public function delete(Testimonial $testimonial)
-    {
-        if ($testimonial->delete()) {
-            return true;
-        }
-
-        throw new GeneralException(trans('exceptions.backend.testimonials.delete_error'));
+        return $this->storage->delete($path . $fileName);
     }
 }

@@ -18,6 +18,16 @@ return [
 	"toggle_navigation" => "Toggle Navigation",
 	],
 	"backend" => [
+	"testimonials" => [
+	"create" => "Create Testimonial",
+	"edit" => "Edit Testimonial",
+	"management" => "Testimonial Management",
+	"title" => "Testimonials",
+	"table" => [
+	"id" => "Id",
+	"createdat" => "Created At",
+	],
+	],
 	"profile_updated" => "Your profile has been updated.",
 	"access" => [
 	"roles" => [

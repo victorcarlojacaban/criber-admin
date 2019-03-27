@@ -29,7 +29,7 @@ class EditResponse implements Responsable
     public function toResponse($request)
     {
         return view('backend.testimonials.edit')->with([
-            'testimonials' => $this->testimonials
+            'testimonial'      => $request->testimonial,
         ]);
     }
 }

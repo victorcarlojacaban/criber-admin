@@ -123,5 +123,5 @@ class RoomsController extends Controller
         //returning with successfull message
         return new RedirectResponse(route('admin.rooms.index'), ['flash_success' => trans('alerts.backend.rooms.deleted')]);
     }
-    
+
 }

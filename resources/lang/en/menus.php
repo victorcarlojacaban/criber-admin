@@ -136,6 +136,13 @@ return [
 	"management" => "Feature Management",
 	"main" => "Features",
 	],
+	"testimonials" => [
+	"all" => "All Testimonials",
+	"create" => "Create Testimonial",
+	"edit" => "Edit Testimonial",
+	"management" => "Testimonial Management",
+	"main" => "Testimonials",
+	],
 	],
 	"language-picker" => [
 	"language" => "Language",
