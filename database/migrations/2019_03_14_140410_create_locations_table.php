@@ -25,6 +25,7 @@ class CreateLocationsTable extends Migration
             $table->string('payment_of_rent')->nullable();
             $table->string('security_deposit')->nullable();
             $table->string('address_map_src', 2000)->nullable();
+            $table->string('whatsapp_link', 500)->nullable();
             $table->text('regulations')->nullable();
             $table->timestamps();
         });

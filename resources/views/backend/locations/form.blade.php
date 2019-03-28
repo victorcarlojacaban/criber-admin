@@ -107,6 +107,16 @@
 
             <div class="col-lg-8 col-md-8 col-sm-8">
                 <div class="form-group">
+                    {{ Form::label('whatsapp_link', 'WhatsApp Link', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
+
+                    <div class="col-lg-10 mce-box">
+                       {{ Form::text('whatsapp_link', null, ['class' => 'form-control box-size', 'placeholder' => 'WhatsApp Link', 'required' => 'required']) }}
+                    </div><!--col-lg-10-->
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="form-group">
                     {{ Form::label('address_map_src', 'Address Map SRC', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
                  
 
