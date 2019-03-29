@@ -2,6 +2,7 @@
 
 namespace App\Http\Responses\Backend\Room;
 
+use App\Models\Room\Room;
 use Illuminate\Contracts\Support\Responsable;
 
 class EditResponse implements Responsable
@@ -38,11 +39,17 @@ class EditResponse implements Responsable
 
         $selectedFeatures = json_decode($roomData['features']);
 
+        $selectedStatus = json_decode($roomData['status']);
+
+        $status = Room::$statusArray;
+
         return view('backend.rooms.edit')->with([
             'room'      => $this->rooms,
             'locations' => $this->locations,
             'features'  => $this->features,
+            'status'    => $status,
             'selectedFeatures' => $selectedFeatures ?? null,
+            'selectedStatus'   => $selectedStatus ?? null,
         ]);
     }
 }

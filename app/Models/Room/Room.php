@@ -59,6 +59,12 @@ class Room extends Model
         'id'
     ];
 
+
+    public static $statusArray = [
+        1 => 'Active',
+        0 => 'In Active'
+    ];
+
     /**
      * Constructor of Model
      * @param array $attributes

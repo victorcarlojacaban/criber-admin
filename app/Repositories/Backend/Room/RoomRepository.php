@@ -68,6 +68,7 @@ class RoomRepository extends BaseRepository
     {
         $input['features'] = json_encode($input['features']);
         $input = $this->uploadImage($input);
+        $input['status'] = (int)$input['status'][0];
 
         if (Room::create($input)) {
             return true;
@@ -86,6 +87,8 @@ class RoomRepository extends BaseRepository
     public function update(Room $room, array $input)
     {
         $input['features'] = json_encode($input['features']);
+        $input['status'] = (int)$input['status'][0];
+        
         // Uploading Image
         if (array_key_exists('image_name', $input)) {
             $this->deleteOldFile($room);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Responses\Backend\Room;
 
+use App\Models\Room\Room;
 use Illuminate\Contracts\Support\Responsable;
 
 class CreateResponse implements Responsable
@@ -18,16 +19,19 @@ class CreateResponse implements Responsable
      */
     public function __construct($features, $locations)
     {
-        $this->features = $features;
+        $this->features  = $features;
         $this->locations = $locations;
     }
 
 
     public function toResponse($request)
-    {
+    {   
+        $status = Room::$statusArray;
+
         return view('backend.rooms.create')->with([
-            'features' => $this->features,
+            'features'  => $this->features,
             'locations' => $this->locations,
+            'status'    => $status,
         ]);
     }
 }

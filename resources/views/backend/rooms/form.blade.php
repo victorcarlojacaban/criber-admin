@@ -21,7 +21,7 @@
 
              <div class="col-lg-8 col-md-8 col-sm-8">
                  <div class="form-group">
-                 {{ Form::label('image_name', 'Location Image', ['class' => 'col-lg-2 control-label required']) }}
+                 {{ Form::label('image_name', 'Room Image', ['class' => 'col-lg-2 control-label required']) }}
                  @if(!empty($room->image_name))
                         <div class="col-lg-3">
                           <!--   <img src="{{ Storage::disk('public')->url('img/rooms/' . $room->image_name) }}" height="80" width="80"> -->
@@ -58,6 +58,15 @@
                     {{ Form::label('features', 'Room Features', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
                     <div class="col-lg-10 mce-box">
                         {{ Form::select('features[]', $features, $selectedFeatures ?? null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
+                    </div><!--col-lg-10-->
+                </div>
+            </div>
+
+             <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="form-group">
+                    {{ Form::label('status', 'Status', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
+                    <div class="col-lg-10 mce-box">
+                        {{ Form::select('status[]', $status, $selectedStatus ?? null, ['class' => 'form-control tags box-size', 'required' => 'required', 'multiple' => 'multiple']) }}
                     </div><!--col-lg-10-->
                 </div>
             </div>
