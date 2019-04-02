@@ -130,12 +130,12 @@
             </div>
 
              <div class="col-lg-8 col-md-8 col-sm-8">
-                <div class="form-group">
+
+                 <div class="form-group">
                     {{ Form::label('regulations', 'Regulations', ['class' => 'col-lg-2 col-md-2 col-sm-2 control-label required']) }}
-                 
 
                     <div class="col-lg-10 mce-box">
-                       {{ Form::textarea('regulations', null, ['class' => 'form-control box-size', 'placeholder' => 'Regulations', 'required' => 'required']) }}
+                        {{ Form::textarea('regulations', null, ['class' => 'form-control', 'placeholder' => 'Regulations COntent']) }}
                     </div><!--col-lg-10-->
                 </div>
             </div>
